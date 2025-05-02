@@ -20,7 +20,7 @@ const AddUser = () => {
       name: name,
       email: email,
       phone: phone,
-      CompanyName: CompanyName,
+      companyName: companyName, // corrected the casing here
     }; //create an object to store the data we get from the form
 
     let response = await axios.post(
