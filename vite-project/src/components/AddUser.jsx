@@ -20,7 +20,7 @@ const AddUser = () => {
       name: name,
       email: email,
       phone: phone,
-      companyName: companyName, // corrected the casing here
+      companyName: companyName, // corrected the casing heres
     }; //create an object to store the data we get from the form
 
     let response = await axios.post(
@@ -73,7 +73,7 @@ const AddUser = () => {
                     <input
                       type="text"
                       className="form-control"
-                      value={CompanyName}
+                      value={companyName}
                       onChange={(e) => setcompanyName(e.target.value)}
                     />
                   </div>
