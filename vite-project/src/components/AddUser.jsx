@@ -1,26 +1,27 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import "./user.css"
+import "./user.css";
 import { useNavigate } from "react-router";
 
 const AddUser = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [CompanyName, setcompanyName] = useState("");
+  const [companyName, setcompanyName] = useState("");
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //this is used to go to the other page
 
   const submit = async (e) => {
-    e.preventDefault();
+    // used to submit the form
+    e.preventDefault(); //prevent reloading the page
 
     let user = {
       name: name,
       email: email,
       phone: phone,
       CompanyName: CompanyName,
-    };
+    }; //create an object to store the data we get from the form
 
     let response = await axios.post(
       "https://jsonplaceholder.typicode.com/users",
@@ -36,7 +37,7 @@ const AddUser = () => {
           <div className="col-md-6">
             <div className="card shadow-sm">
               <div className="card-header bg-light text-dark">
-                <h4 >Add New User</h4>
+                <h4>Add New User</h4>
               </div>
               <div className="card-body">
                 <form onSubmit={submit}>
